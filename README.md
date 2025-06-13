@@ -47,9 +47,35 @@ Add your dashboard screenshot or a link below:
 - 📉 Certain industries saw a decline in investments post-2020
 - 🔍 Angel and Seed funding were the most common funding types
 
-## ⚙️ How to Run
+Error-pathway:
+1. While cleaning and pre-processing the data I came across many errors , where I took help of some external websites inorder to fix them
+2. To format the Date column properly
+3. Used some techniques to align the dashboard , took some inspiration
+4. Discovered new items in POWER BI and excel
 
-1. Clone the repository:
+Clone the repository:
    ```bash
  git clone https://github.com/SamuelBen07/indian-startups-analysis.git
 
+Code:
+import pandas as pd
+df=pd.read_csv('/startjobs.csv')
+df.head()
+print(df.columns)
+df['Amount in USD'] = df['Amount in USD'].astype(str).str.replace(',', '', regex=False)
+df['Amount in USD'] = pd.to_numeric(df['Amount in USD'], errors='coerce')
+top_startups=df.groupby('Startup Name')['Amount in USD'].sum().nlargest(10)
+print(top_startups)
+df.head()
+df['Amount in USD']=df['Amount in USD'].astype(str)
+df['Amount in USD']=df['Amount in USD'].str.replace(',','')
+df['Amount in USD']=pd.to_numeric(df['Amount in USD'],errors='coerce')
+top_startups=df.groupby('Startup Name')['Amount in USD'].sum().sort_values(ascending=False).head(10)
+print(top_startups)
+top_cities=df.groupby('City Location')['Amount in USD'].sum().sort_values(ascending=False).head(10)
+print(top_cities)
+df.columns=df.columns.str.strip()
+top_cities=df.groupby('City Location').sum().sort_values(by=None, ascending=False).head(10)
+print(top_cities) 
+investment=df['InvestmentnType'].value_counts()
+print(investment)
