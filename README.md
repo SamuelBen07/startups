@@ -7,7 +7,7 @@ This project presents a comprehensive analysis of the Indian startup ecosystem u
 Startups are the backbone of innovation in India. With thousands of new ventures emerging each year, this project explores trends and insights such as:
 
 - Which industry dominates the startup scene?
-- Where is the funding going?
+- Where is the all funding going?
 - Which cities are startup hotspots?
 - What patterns emerge from the data?
 
