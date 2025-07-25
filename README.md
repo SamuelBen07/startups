@@ -31,14 +31,6 @@ https://www.kaggle.com/datasets/sudalairajkumar/indian-startup-funding
 - Analyzed investment trends and funding rounds
 - Created dynamic visual dashboards using Power BI
 
-## 📊 Power BI Dashboard
-
-Add your dashboard screenshot or a link below:
-
-
-
-![image](https://github.com/user-attachments/assets/51bd579f-dcf5-4d79-923b-bf32dc6050b9)
-
 
 ## 📈 Insights
 
